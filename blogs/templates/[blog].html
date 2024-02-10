@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{blog.title}}</title>
+	</head>
+	<body>
+		<a href="/blogs">Go Back </a>
+		<h2>{{blog.title}}</h2>
+		<p>{{blog.body}}</p>
+		<div>
+			<h3>Details</h3>
+			<ul>
+				<li>Title has {{blog.title | length}} characters in total.</li>
+				<li>The next blog would have the id: {{blog.id | add:1}}</li>
+				<li>From text "I'm Niloy" to String "{{"I'm Niloy" | addslashes}}"</li>
+				<li>"niloy mahmud apu" becomes nicer "{{"niloy" | capfirst}} {{"mahmud" | capfirst}} {{"apu" | capfirst}}"</li>
+				<li>"{{"centered" | center:"300"}}"</li>
+			</ul>
+		</div>
+	</body>
+</html>
