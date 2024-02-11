@@ -16,7 +16,34 @@
 				<li>The next blog would have the id: {{blog.id | add:1}}</li>
 				<li>From text "I'm Niloy" to String "{{"I'm Niloy" | addslashes}}"</li>
 				<li>"niloy mahmud apu" becomes nicer "{{"niloy" | capfirst}} {{"mahmud" | capfirst}} {{"apu" | capfirst}}"</li>
-				<li>"{{"centered" | center:"300"}}"</li>
+				<li>text is "{{"centered" | center:"300"}}"</li>
+				<li>Title without spaces: {{ blog.title | cut:" "}}</li>
+				<li>This blog was published at: {{ blog.published | date:"D d M Y"}}</li>
+				<li>Author: {{ blog.author | default:"Niloy Mahmud Apu"}}</li>
+				<li>Viewers sorted by age: {{ blog.viewers | dictsort:"name"}}</li>
+				<li>8 is divisible by 3: {{"8" | divisibleby:"3"}}</li>
+				<li>Escape: "{{"if 8>3 then 8/3 > 1" | escape}}"</li>
+				<li>Apparently 12341234 is {{"12341234" | filesizeformat}} in file size format</li>
+				<li>First viewer is: {{blog.viewers | first}}</li>
+				<li>Last viewer is: {{blog.viewers | last}}</li>
+				<li>Join: {{blog.viewers | join:" ======== "}}</li>
+				<li>Body lines: {{blog.body | linenumbers}}</li>
+				<li>Lowercase: {{"Heilo heILo hEilO" | lower}}</li>
+				<li>Uppercase: {{"Heilo heILo hEilO" | upper}}</li>
+				<li>String to list: {{"Heilo heILo hEilO" | make_list}}</li>
+				<li>Last viewer is: {{blog.viewers | random}}</li>
+				<li>Viewers are sliced: {{blog.viewers | slice:":2"}}</li>
+				<li>Title slug: {{blog.title | slugify}}</li>
+				<li>Publish time: {{ blog.published | time:"H:i"}}</li>
+				<li>Published {{ blog.published | timesince:blog.now}} ago</li>
+				<li>Nice Title: {{blog.title | title}}</li>
+				<li>
+					Unordered List:
+					<ul>
+						{{blog | unordered_list}}
+					</ul>
+				</li>
+				<li>Body has {{blog.body | wordcount}} words in total.</li>
 			</ul>
 		</div>
 	</body>
