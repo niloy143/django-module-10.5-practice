@@ -10,7 +10,7 @@
 		<h2>{{blog.title}}</h2>
 		<p>{{blog.body}}</p>
 		<div>
-			<h3>Details</h3>
+			<h3>Geeks Filters</h3>
 			<ul>
 				<li>Title has {{blog.title | length}} characters in total.</li>
 				<li>The next blog would have the id: {{blog.id | add:1}}</li>
@@ -44,6 +44,16 @@
 					</ul>
 				</li>
 				<li>Body has {{blog.body | wordcount}} words in total.</li>
+			</ul>
+		</div>
+		<div>
+			<h3>Earthly Ones</h3>
+			<ul>
+				<li> Title without spaces: {{blog.title | cut:" "}} </li>
+				<li> Truncated after 16 characters: {{blog.title | truncatechars:16}} </li>
+				<li> Truncated after 5 words: {{blog.title | truncatewords:5}} </li>
+				<li> {{"I am a <b>Good</b> boy with super <b>intelligence</b>" | striptags}} </li>
+				<li> 2 message{{"2" | pluralize}}, 1 comment{{"1" | pluralize}}</li>
 			</ul>
 		</div>
 	</body>
